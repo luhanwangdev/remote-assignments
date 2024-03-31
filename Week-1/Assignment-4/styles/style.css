@@ -1,0 +1,407 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  top: 0;
+  position: sticky;
+  padding: 0 20px;
+  min-height: 7vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+}
+header div.logo-name-wrapper img {
+  width: 200px;
+}
+header div.header-middle-row-wrapper {
+  display: flex;
+  align-items: center;
+}
+header div.header-middle-row-wrapper ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+header div.header-middle-row-wrapper ul li {
+  margin: 1rem;
+  list-style-type: none;
+}
+header div.header-middle-row-wrapper ul li a {
+  text-decoration: none;
+}
+header div.searching-result {
+  display: flex;
+  margin-left: 2rem;
+  justify-content: center;
+}
+header div.searching-result input {
+  font-size: 16px;
+  height: 2rem;
+  padding-left: 10px;
+  border: 0;
+  border-radius: 4px;
+  background-color: rgb(241, 241, 241);
+}
+header div.language-selector {
+  height: 2rem;
+  padding: 0 15px;
+  border: 0.5px solid rgb(208, 208, 208);
+  border-radius: 4px;
+  display: flex;
+}
+header div.language-selector p {
+  margin: auto;
+}
+header div.user-wrapper {
+  width: 55px;
+  display: flex;
+  justify-content: space-between;
+}
+
+div.banner {
+  height: 9vh;
+  display: flex;
+  background-color: #1a73e8;
+}
+div.banner p {
+  margin: auto;
+  color: white;
+}
+div.banner p a:link, div.banner p a:visited {
+  color: white;
+}
+div.banner p a:hover {
+  text-decoration: none;
+}
+
+div.translation {
+  padding: 10px 40px;
+  height: 11vh;
+  border-bottom: 0.5px solid rgb(208, 208, 208);
+  background-color: rgb(241, 241, 241);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+div.translation p {
+  margin-left: 30px;
+  margin-right: auto;
+}
+div.translation p a {
+  text-decoration: none;
+}
+div.translation p a:link, div.translation p a:visited {
+  color: #1a73e8;
+}
+div.translation button {
+  padding: 5px 20px;
+  font-weight: bold;
+  color: #1a73e8;
+  background-color: white;
+  border: 0.5px solid rgb(208, 208, 208);
+  border-radius: 4px;
+}
+div.translation button:hover {
+  background-color: aliceblue;
+}
+
+div.advertisement {
+  min-height: 90vh;
+  width: 100%;
+  padding: 0 5vw;
+  background-color: rgb(238, 238, 238);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  align-items: center;
+}
+div.advertisement div.advertisement-text {
+  grid-column: 1/1;
+}
+div.advertisement div.advertisement-text h2 {
+  font-size: 4rem;
+}
+div.advertisement div.advertisement-text p {
+  margin: 1rem 0;
+  font-size: 1.5rem;
+}
+div.advertisement div.advertisement-text button {
+  padding: 0.5rem 1.5rem;
+  font-size: 1.2rem;
+  color: white;
+  background-color: rgb(50, 50, 50);
+  border: 0;
+  border-radius: 25px;
+}
+div.advertisement div.advertisement-text button:hover {
+  background-color: rgb(150, 150, 150);
+}
+div.advertisement img {
+  max-width: 50vw;
+}
+
+section.section-built {
+  padding: 1rem 5rem;
+}
+section.section-built h2 {
+  font-size: 3rem;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+section.section-built div.built-boxs {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+section.section-built div.built-boxs div.built-box {
+  width: calc((100% - 70px) / 4);
+  min-width: 180px;
+  height: 350px;
+  display: flex;
+  flex-wrap: wrap;
+  border: 0.5px solid rgb(208, 208, 208);
+  border-radius: 15px;
+  padding: 2rem;
+}
+section.section-built div.built-boxs div.built-box a {
+  text-decoration: none;
+}
+section.section-built div.built-boxs div.built-box a img {
+  width: 100%;
+  height: 90px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+section.section-built div.built-boxs div.built-box a p {
+  color: black;
+  text-align: center;
+}
+section.section-built div.built-boxs div.built-box a p.built-title {
+  font-weight: bold;
+  padding: 1rem 0;
+}
+section.section-built div.built-boxs div.built-box a:hover {
+  text-decoration: underline;
+  text-decoration-color: #1a73e8;
+}
+section.section-built div.built-button {
+  display: flex;
+  padding: 3rem 0;
+}
+section.section-built div.built-button button {
+  margin: auto;
+  color: white;
+  background-color: #1a73e8;
+  border: 0;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+}
+section.section-built div.built-button button:hover {
+  background-color: #372d99;
+}
+
+section.project {
+  padding: 1rem 2rem;
+}
+section.project h2 {
+  font-size: 3rem;
+  text-align: center;
+  padding-bottom: 1.5rem;
+}
+section.project h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-align: center;
+  padding-bottom: 1.5rem;
+}
+section.project div.project-boxs {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+section.project div.project-boxs div.project-box {
+  width: calc((100% - 20px) / 2);
+  min-width: 650px;
+  height: 180px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  border: 0.5px solid rgb(208, 208, 208);
+  border-radius: 15px;
+  padding: 1rem;
+}
+section.project div.project-boxs div.project-box div.project-text h3 {
+  text-align: left;
+  padding-bottom: 1rem;
+  font-weight: 800;
+}
+section.project div.project-boxs div.project-box div.project-text p {
+  text-align: left;
+  padding-bottom: 1rem;
+  font-size: 1.2rem;
+}
+section.project div.project-boxs div.project-box div.project-text button {
+  margin: auto;
+  color: white;
+  background-color: #1a73e8;
+  border: 0;
+  border-radius: 5px;
+  padding: 0.5rem 1.5rem;
+}
+section.project div.project-boxs div.project-box div.project-text button:hover {
+  background-color: #372d99;
+}
+section.project div.project-boxs div.project-box img {
+  margin-left: auto;
+  width: 20%;
+}
+
+section.follow {
+  padding: 2rem 2rem;
+}
+section.follow h2 {
+  font-size: 3rem;
+  font-weight: bolder;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+section.follow div.follow-boxs {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+section.follow div.follow-boxs div.follow-box {
+  width: calc((100% - 70px) / 4);
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  border: 0.5px solid rgb(208, 208, 208);
+  border-radius: 15px;
+  padding: 1rem;
+}
+section.follow div.follow-boxs div.follow-box img {
+  width: 40px;
+}
+section.follow div.follow-boxs div.follow-box h3 {
+  margin: 1.2rem 0;
+  font-size: 1.5rem;
+  font-weight: lighter;
+}
+section.follow div.follow-boxs div.follow-box p {
+  margin-bottom: 1.2rem;
+}
+section.follow div.follow-boxs div.follow-box button {
+  width: 100px;
+  color: #1a73e8;
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+section.follow div.follow-boxs div.follow-box button:hover {
+  background-color: azure;
+}
+
+section.product {
+  padding: 1rem;
+  height: 12vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+}
+section.product img {
+  width: 180px;
+}
+section.product ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+section.product ul li {
+  list-style: none;
+  margin: 0 2rem;
+}
+section.product ul li a {
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+section.product ul li a:link, section.product ul li a:visited {
+  color: rgb(43, 43, 43);
+}
+section.product ul li a:hover {
+  color: #1a73e8;
+}
+
+footer {
+  padding: 1rem;
+  height: 12vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+footer div.term {
+  width: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer div.term a {
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+footer div.term a:link, footer div.term a:visited {
+  color: rgb(43, 43, 43);
+}
+footer div.term a:hover {
+  color: #1a73e8;
+}
+footer div.sign-up {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 650px;
+}
+footer div.sign-up button {
+  margin: auto;
+  color: white;
+  background-color: #1a73e8;
+  border: 0;
+  border-radius: 5px;
+  padding: 0.5rem 1.5rem;
+}
+footer div.sign-up button:hover {
+  background-color: #372d99;
+}
+footer div.sign-up div.language-selector {
+  height: 2rem;
+  padding: 0 15px;
+  border: 0.5px solid rgb(208, 208, 208);
+  border-radius: 4px;
+  display: flex;
+}
+footer div.sign-up div.language-selector p {
+  margin: auto;
+}
+
+button:hover {
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */
