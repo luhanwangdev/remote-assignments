@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  top: 0;
+  position: sticky;
+  background-color: rgb(68, 69, 69);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+header #website-title-area {
+  display: flex;
+  align-items: center;
+}
+header #website-title-area a {
+  padding: 0 1rem;
+  color: rgb(154, 204, 143);
+  font-size: 2rem;
+  text-decoration: none;
+}
+header #website-title-area a:hover {
+  color: rgb(178, 234, 165);
+}
+header #website-title-area img {
+  height: 3rem;
+}
+header nav ul {
+  display: flex;
+}
+header nav ul li {
+  margin: 1rem;
+  list-style-type: none;
+}
+header nav ul li a {
+  color: darkgray;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+header nav ul li a:hover {
+  color: lightgrey;
+}
+
+main #welcome-message-area {
+  display: flex;
+  height: 25vh;
+  background-color: rgb(154, 204, 143);
+  color: rgb(68, 69, 69);
+}
+main #welcome-message-area h1 {
+  margin: auto;
+}
+main #middle-area #middle-text {
+  display: flex;
+  height: 10vh;
+}
+main #middle-area #middle-text h2 {
+  margin: auto;
+  color: rgb(163, 191, 114);
+  font-weight: bold;
+}
+main #middle-area .content-box-div {
+  display: flex;
+  justify-content: center;
+}
+main #middle-area .content-box-div .content-box-area {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+}
+main #middle-area .content-box-div .content-box-area div.content-box {
+  width: 48vw;
+  max-width: 590px;
+  min-height: 15vh;
+  padding: 0.8rem;
+  margin: 10px 0;
+  border-radius: 1rem;
+  background-color: rgb(154, 204, 143);
+  text-align: justify;
+}
+main #middle-area .content-box-div .content-box-area div.content-box h3 {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+main #middle-area .content-box-div .content-box-area div.content-box h3 a {
+  text-decoration: none;
+}
+main #middle-area .content-box-div .content-box-area div.content-box h3 a:link, main #middle-area .content-box-div .content-box-area div.content-box h3 a:visited {
+  color: rgb(16, 122, 94);
+}
+main #middle-area .content-box-div .content-box-area div.content-box h3 a:hover {
+  color: aquamarine;
+}
+main #middle-area #hidden {
+  display: none;
+}
+main #middle-area div.button-area {
+  display: flex;
+  height: 10vh;
+}
+main #middle-area div.button-area button {
+  margin: auto;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+footer {
+  display: flex;
+}
+footer p {
+  margin: auto;
+}
+
+@media screen and (max-width: 1200px) {
+  main #middle-area #content-box-div #content-box-area div.content-box {
+    margin: 10px auto;
+  }
+}
+@media screen and (max-width: 1050px) {
+  header {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 700px) {
+  header {
+    flex-direction: column;
+  }
+  header nav ul li a {
+    font-size: 0.8rem;
+  }
+}/*# sourceMappingURL=style.css.map */

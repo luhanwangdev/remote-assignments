@@ -146,12 +146,12 @@ div.advertisement img {
 }
 
 section.section-built {
-  padding: 1rem 5rem;
+  padding: 4rem 1rem 5rem;
 }
 section.section-built h2 {
   font-size: 3rem;
   text-align: center;
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
 }
 section.section-built div.built-boxs {
   width: 100%;
