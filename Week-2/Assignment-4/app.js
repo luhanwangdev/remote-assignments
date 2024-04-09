@@ -1,5 +1,5 @@
 //Request 1
-let welcomeText = document.querySelector("#welcome-message");
+const welcomeText = document.querySelector("#welcome-message");
 const welcomeArea = document.querySelector("#welcome-message-area");
 
 welcomeArea.addEventListener("click", () => {
@@ -7,8 +7,8 @@ welcomeArea.addEventListener("click", () => {
 });
 
 //Request 2
-let btnShow = document.querySelector(".show-btn");
-let hiddenArea = document.querySelector("#hidden");
+const btnShow = document.querySelector(".show-btn");
+const hiddenArea = document.querySelector("#hidden");
 
 btnShow.addEventListener("click", () => {
   hiddenArea.removeAttribute("id");

@@ -1,8 +1,8 @@
 function max(numbers) {
   // your code here, for-loop method preferred
-  let max = 0;
+  let max = numbers[0];
 
-  for (let i = 0; i < numbers.length; i++) {
+  for (let i = 1; i < numbers.length; i++) {
     if (numbers[i] > max) {
       max = numbers[i];
     }
