@@ -1,0 +1,15 @@
+doctype html 
+head 
+    title= 'Welcome Page'
+body 
+    if(!name)
+        h1 Welcome!
+        h2 Seems like you are the first time here...
+        form(action="trackName")
+            lable Please tell me your name: 
+                input(type="text" name="name") 
+            button Submit
+    else
+        h1 Welcome back, #{name}!
+        form(action="trackName/clear")
+            button Goodbye!
