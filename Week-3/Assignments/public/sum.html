@@ -42,11 +42,19 @@
 
         const number = input.value;
         fetch(`http://localhost:3000/data?number=${number}`)
-          .then((res) => res.json())
+          .then((res) => res.text())
           .then((data) => {
-            p.textContent = `
-           Sum from 1 to ${number}: ${data}
-           `;
+            //check if the data is an integer
+            if (data % 1 === 0) {
+              p.textContent = `Sum from 1 to ${number}: ${data}`;
+            } else {
+              p.textContent = `
+                You get an error: ${data}! Please try again!
+                `;
+            }
+          })
+          .catch((err) => {
+            console.log(err);
           });
       });
     </script>
