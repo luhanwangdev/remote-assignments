@@ -6,7 +6,37 @@
     <title>Sum Page</title>
   </head>
   <body>
-    <h1>Welcome to sum page!</h1>
-    <p>Here is a static HTML file!</p>
+    <h1>Welcome to Sum page!</h1>
+    <h2>
+      Here you can input an integer <i>n</i> and get the sum from 1 to <i>n</i>!
+    </h2>
+    <div class="number"></div>
+    <!-- create a get form and set the input name to "number"  -->
+    <form action="/data" method="GET">
+      <input type="text" name="number" />
+      <button type="submit">Sum!</button>
+    </form>
+    <p class="example"></p>
+
+    <!-- 
+    spend about 1hr and finally figure out that
+    the defer property can only be used when script has 'src' property
+    lol
+    -->
+    <script>
+      const example = document.querySelector(".example");
+      const input = document.querySelector("input");
+      const btn = document.querySelector("button");
+
+      fetch("http://localhost:3000/data?number=10")
+        .then((res) => res.json())
+        .then((data) => {
+          example.textContent = `
+           For example: text '10' and get the result: ${data}
+           `;
+          console.log(data);
+        })
+        .catch((err) => console.log(err));
+    </script>
   </body>
 </html>
