@@ -10,13 +10,12 @@
     <h2>
       Here you can input an integer <i>n</i> and get the sum from 1 to <i>n</i>!
     </h2>
-    <div class="number"></div>
-    <!-- create a get form and set the input name to "number"  -->
+
     <form action="/data" method="GET">
       <input type="text" name="number" />
       <button type="submit">Sum!</button>
     </form>
-    <p class="example"></p>
+    <p class="number"></p>
 
     <!-- 
     spend about 1hr and finally figure out that
@@ -24,19 +23,32 @@
     lol
     -->
     <script>
-      const example = document.querySelector(".example");
+      const p = document.querySelector(".number");
       const input = document.querySelector("input");
       const btn = document.querySelector("button");
 
       fetch("http://localhost:3000/data?number=10")
         .then((res) => res.json())
         .then((data) => {
-          example.textContent = `
+          p.textContent = `
            For example: text '10' and get the result: ${data}
            `;
           console.log(data);
         })
         .catch((err) => console.log(err));
+
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        const number = input.value;
+        fetch(`http://localhost:3000/data?number=${number}`)
+          .then((res) => res.json())
+          .then((data) => {
+            p.textContent = `
+           Sum from 1 to ${number}: ${data}
+           `;
+          });
+      });
     </script>
   </body>
 </html>
