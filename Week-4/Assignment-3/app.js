@@ -10,25 +10,38 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get("/", (req, res) => {
-  res.render("index");
+  const error = req.cookies.error;
+  if (req.cookies.error) {
+    res.clearCookie("error");
+  }
+  res.render("index", { error });
 });
 
 app.post("/signUp", async (req, res) => {
   const { email, password } = req.body;
   const result = await createUser(email, password);
-  //   console.log(result);
-  res.redirect("member");
+  if (result) {
+    res.cookie("user", email);
+    res.redirect("member");
+  } else {
+    const error = "The email or password is wrong";
+    res.cookie("error", error);
+    res.redirect("/");
+  }
 });
 
 app.post("/signIn", async (req, res) => {
   const { email, password } = req.body;
   const result = await getUser(email, password);
   if (result) {
+    res.cookie("user", email);
     res.redirect("member");
   } else {
-    const error = "The email or password is wrong";
-    console.log();
-    res.render("index", { error });
+    const error = `
+    The email or password is wrong!
+    Please try again`;
+    res.cookie("error", error);
+    res.redirect("/");
   }
 });
 

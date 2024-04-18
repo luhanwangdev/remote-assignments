@@ -4,7 +4,7 @@ head
 body
     if(error)
         script.
-            alert(#{error})
+            alert(`#{error}`)
     h1 Welcome to Home Page!
     h2 Let's sign up an account!
     form(action="/signUp" method='post')
