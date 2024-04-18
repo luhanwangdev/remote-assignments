@@ -3,4 +3,19 @@ head
     title= 'Home Page'
 body
     h1 Welcome to Home Page!
-    h2 Please 
+    h2 Let's sign up an account!
+    form(action="/signUp")
+        lable email: 
+            input(type="email" name="email") 
+        lable password: 
+            input(type="password" name="password")
+        button Sign Up!
+    br
+    h2 Already have an account?
+    h3 Let's sign in!
+    form(action="/signIn")
+        lable email: 
+            input(type="email" name="email") 
+        lable password: 
+            input(type="password" name="password")
+        button Sign In!
