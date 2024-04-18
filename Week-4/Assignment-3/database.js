@@ -12,6 +12,16 @@ const pool = mysql
   })
   .promise();
 
+async function getUser(id) {
+  const [rows] = await pool.query(
+    `
+      SELECT * FROM user WHERE id = ?
+      `,
+    [id]
+  );
+  return rows[0];
+}
+
 export async function checkUser(email) {
   const [rows] = await pool.query(
     `
