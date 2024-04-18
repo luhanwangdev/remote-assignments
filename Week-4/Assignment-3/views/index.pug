@@ -4,7 +4,7 @@ head
 body
     h1 Welcome to Home Page!
     h2 Let's sign up an account!
-    form(action="/signUp")
+    form(action="/signUp" method='post')
         lable email: 
             input(type="email" name="email") 
         lable password: 
@@ -13,7 +13,7 @@ body
     br
     h2 Already have an account?
     h3 Let's sign in!
-    form(action="/signIn")
+    form(action="/signIn" method='post')
         lable email: 
             input(type="email" name="email") 
         lable password: 
