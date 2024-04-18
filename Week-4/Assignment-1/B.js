@@ -1,6 +1,6 @@
 function delayedResultPromise(n1, n2, delayTime) {
   // your code here
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     const result = n1 + n2;
     setTimeout(resolve, delayTime, result);
   });
