@@ -17,7 +17,7 @@ export async function checkUser(email) {
     `
     SELECT * FROM user WHERE email = ?
     `,
-    [email, password]
+    [email]
   );
   return rows[0];
 }
