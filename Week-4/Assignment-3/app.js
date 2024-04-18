@@ -32,6 +32,8 @@ app.post("/signUp", async (req, res) => {
     if (result) {
       res.cookie("user", email);
       res.redirect("member");
+    } else {
+      throw new Error();
     }
   }
 });
@@ -52,7 +54,13 @@ app.post("/signIn", async (req, res) => {
 });
 
 app.get("/member", (req, res) => {
-  res.render("member");
+  const user = req.cookies.user;
+  res.render("member", { user });
+});
+
+app.get("/logOut", (req, res) => {
+  res.clearCookie("user");
+  res.redirect("/");
 });
 
 app.use((err, req, res, next) => {
