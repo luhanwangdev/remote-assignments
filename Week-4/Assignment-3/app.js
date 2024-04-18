@@ -19,14 +19,20 @@ app.get("/", (req, res) => {
 
 app.post("/signUp", async (req, res) => {
   const { email, password } = req.body;
-  const result = await createUser(email, password);
-  if (result) {
-    res.cookie("user", email);
-    res.redirect("member");
-  } else {
-    const error = "The email or password is wrong";
+  const exist = await checkUser(email);
+  if (exist) {
+    const error = `
+    The email is already existed!
+    Please sign in or try another email
+    `;
     res.cookie("error", error);
     res.redirect("/");
+  } else {
+    const result = await createUser(email, password);
+    if (result) {
+      res.cookie("user", email);
+      res.redirect("member");
+    }
   }
 });
 
