@@ -7,6 +7,6 @@ CREATE TABLE `user`(
     `password` VARCHAR(255) NOT NULL
 );
 
-INSERT INTO `user`(email, `password`)
-VALUES
-("123@gmail.com", "123");
+-- INSERT INTO `user`(email, `password`)
+-- VALUES
+-- ("123@gmail.com", "123");
