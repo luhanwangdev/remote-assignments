@@ -17,5 +17,27 @@ async function getUsers() {
   return rows;
 }
 
+async function getUser(id) {
+  const [rows] = await pool.query(
+    `
+    SELECT * FROM user WHERE id = ?
+    `,
+    [id]
+  );
+  return rows[0];
+}
+
+async function createUser(email, password) {
+  const [result] = await pool.query(
+    `
+        INSERT INTO user(email, password)
+        VALUE(?, ?);
+    `,
+    [email, password]
+  );
+  const id = result.insertId;
+  return getUser(id);
+}
+
 const result = await getUsers();
 console.log(result);
