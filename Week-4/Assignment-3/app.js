@@ -16,14 +16,20 @@ app.get("/", (req, res) => {
 app.post("/signUp", async (req, res) => {
   const { email, password } = req.body;
   const result = await createUser(email, password);
-  console.log(result);
+  //   console.log(result);
   res.redirect("member");
 });
 
 app.post("/signIn", async (req, res) => {
   const { email, password } = req.body;
-
-  res.redirect("member", { email });
+  const result = await getUser(email, password);
+  if (result) {
+    res.redirect("member");
+  } else {
+    const error = "The email or password is wrong";
+    console.log();
+    res.render("index", { error });
+  }
 });
 
 app.get("/member", (req, res) => {

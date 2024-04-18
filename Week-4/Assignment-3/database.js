@@ -39,5 +39,5 @@ export async function createUser(email, password) {
   return getUser(id);
 }
 
-const result = await getUser("123@gmail.com", "123");
-console.log(result);
+// const result = await getUser("123@gmail.com", "123");
+// console.log(result);
