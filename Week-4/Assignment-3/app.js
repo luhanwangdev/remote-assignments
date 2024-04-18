@@ -1,7 +1,7 @@
 import express from "express";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
-import { getUsers, getUser, createUser } from "./database.js";
+import { checkUser, authenticateUser, createUser } from "./database.js";
 
 const app = express();
 
@@ -32,7 +32,7 @@ app.post("/signUp", async (req, res) => {
 
 app.post("/signIn", async (req, res) => {
   const { email, password } = req.body;
-  const result = await getUser(email, password);
+  const result = await authenticateUser(email, password);
   if (result) {
     res.cookie("user", email);
     res.redirect("member");
