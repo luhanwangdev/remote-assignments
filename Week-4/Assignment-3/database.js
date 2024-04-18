@@ -17,12 +17,12 @@ export async function getUsers() {
   return rows;
 }
 
-export async function getUser(id) {
+export async function getUser(email, password) {
   const [rows] = await pool.query(
     `
-    SELECT * FROM user WHERE id = ?
+    SELECT * FROM user WHERE email = ? AND password = ?
     `,
-    [id]
+    [email, password]
   );
   return rows[0];
 }
@@ -39,5 +39,5 @@ export async function createUser(email, password) {
   return getUser(id);
 }
 
-const result = await getUsers();
+const result = await getUser("123@gmail.com", "123");
 console.log(result);
