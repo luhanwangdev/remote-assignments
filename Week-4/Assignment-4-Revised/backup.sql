@@ -52,6 +52,34 @@ INSERT INTO `article` VALUES (1,'123@gmail.com','123test','hello'),(3,'123@gmail
 UNLOCK TABLES;
 
 --
+-- Table structure for table `article_id`
+--
+
+DROP TABLE IF EXISTS `article_id`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `article_id` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `author` int NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `content` text NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `author` (`author`),
+  CONSTRAINT `article_id_ibfk_1` FOREIGN KEY (`author`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `article_id`
+--
+
+LOCK TABLES `article_id` WRITE;
+/*!40000 ALTER TABLE `article_id` DISABLE KEYS */;
+INSERT INTO `article_id` VALUES (1,1,'test','test'),(2,1,'Adventure','Exploring new territories, finding hidden treasures.'),(3,2,'Memories','Reminiscing about cherished moments from the past.'),(4,3,'Dreams','Aspiring for greatness, reaching for the stars.'),(5,4,'Reflection','Contemplating life\'s journey, pondering its meaning.'),(6,5,'Journey','Embarking on a quest, overcoming obstacles along the way.'),(9,8,'Adventure','Exploring new territories, finding hidden treasures.'),(10,9,'Memories','Reminiscing about cherished moments from the past.'),(11,1,'Dreams','Aspiring for greatness, reaching for the stars.'),(12,2,'Reflection','Contemplating life\'s journey, pondering its meaning.'),(13,3,'Journey','Embarking on a quest, overcoming obstacles along the way.'),(14,4,'Discovery','Uncovering mysteries, unlocking secrets of the universe.'),(15,5,'Hope','Embracing optimism, believing in a brighter tomorrow.'),(18,8,'Dreams','Aspiring for greatness, reaching for the stars.'),(19,9,'Reflection','Contemplating life\'s journey, pondering its meaning.'),(20,1,'Journey','Embarking on a quest, overcoming obstacles along the way.'),(21,2,'Discovery','Uncovering mysteries, unlocking secrets of the universe.'),(22,3,'Hope','Embracing optimism, believing in a brighter tomorrow.'),(23,4,'Adventure','Exploring new territories, finding hidden treasures.'),(24,5,'Memories','Reminiscing about cherished moments from the past.'),(27,8,'Journey','Embarking on a quest, overcoming obstacles along the way.'),(28,9,'Discovery','Uncovering mysteries, unlocking secrets of the universe.'),(29,1,'Hope','Embracing optimism, believing in a brighter tomorrow.'),(30,2,'Adventure','Exploring new territories, finding hidden treasures.'),(31,3,'Memories','Reminiscing about cherished moments from the past.'),(32,4,'Dreams','Aspiring for greatness, reaching for the stars.'),(33,5,'Reflection','Contemplating life\'s journey, pondering its meaning.'),(37,1,'Journey','Embarking on a quest, overcoming obstacles along the way.'),(38,2,'Discovery','Uncovering mysteries, unlocking secrets of the universe.'),(39,3,'Hope','Embracing optimism, believing in a brighter tomorrow.');
+/*!40000 ALTER TABLE `article_id` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `user`
 --
 
@@ -86,4 +114,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-04-19 14:36:19
+-- Dump completed on 2024-04-22 14:23:59
